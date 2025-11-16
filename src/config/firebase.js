@@ -2,7 +2,7 @@ import admin from "firebase-admin";
 import { readFileSync } from "fs";
 
 const serviceAccount = JSON.parse(
-  readFileSync(new URL("../../game-challenges-e7842-firebase-adminsdk-fbsvc-649eef91b1.json", import.meta.url))
+  readFileSync(new URL(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON, import.meta.url))
 );
 
 admin.initializeApp({
