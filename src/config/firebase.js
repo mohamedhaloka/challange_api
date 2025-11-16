@@ -3,6 +3,7 @@ import admin from "firebase-admin";
 let serviceAccount;
 
 try {
+    console.log("ENV LOADED?", !!process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
   serviceAccount = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
 } catch (e) {
   console.error("❌ Failed to parse Firebase service account JSON:", e);
